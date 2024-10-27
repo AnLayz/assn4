@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dowry Price Calculator</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Dowry Price Calculator</h1>
+
+        <!-- Calculator Form -->
+        <div class="card p-4 shadow-lg">
+            <div class="form-group">
+                <label for="name">Bride's name</label>
+                <input type="text" id="name" class="form-control" placeholder="Enter name">
+            </div>
+            <!-- Starting Bid -->
+            <div class="form-group">
+                <label for="startingBid">Starting Bid</label>
+                <input type="number" id="startingBid" class="form-control" placeholder="Enter starting bid">
+            </div>
+            <!-- education -->
+            <div class="form-group">
+                <label for="educataion">Education level</label>
+                <select id="education" class="form-control" aria-label="Education Level">
+                    <option disabled selected>Select Education Level</option>
+                    <option value="1.5">Undergraduate degree</option>
+                    <option value="1.2">College degree</option>
+                    <option value="1.05">High school degree</option>
+                    <option value="0.9">Middle school degree</option>
+                </select>
+            </div>
+            
+            <!-- networth -->
+            <div class="form-group">
+                <label for="netWorth">Family Net Worth</label>
+                <select id="netWorth" class="form-control">
+                    <option value="2">More than $10,000</option>
+                    <option value="1.5">Between $5,000 and $10,000</option>
+                    <option value="1.2">Less than $5,000</option>
+                </select>
+            </div>
+            <!-- caste -->
+            <div class="form-group">
+                <label for="caste">Caste</label>
+                <select id="caste" class="form-control">
+                    <option value="100">Brahmin (+100)</option>
+                    <option value="50">Kshatriya (+50)</option>
+                    <option value="20">Vaishya (+20)</option>
+                    <option value="10">Shudra (+10)</option>
+                    <option value="-50">Varna - Untouchable (-50)</option>
+                </select>
+            </div>
+            <!-- skills -->
+            <div class="form-group">
+                <label>Skills</label>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input skill" value="10" id="skill1">
+                    <label class="form-check-label" for="skill1">Playing a musical instrument (+10)</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input skill" value="20" id="skill2">
+                    <label class="form-check-label" for="skill2">Good cook (+20)</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input skill" value="15" id="skill3">
+                    <label class="form-check-label" for="skill3">Easygoing character (+15)</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input skill" value="10" id="skill4">
+                    <label class="form-check-label" for="skill4">Sings well (+10)</label>
+                </div>
+            </div>
+            <!-- age -->
+            <div class="form-group">
+                <label>Age</label>
+                <div class="form-check">
+                    <input type="radio" name="age" class="form-check-input" value="1.5" id="age1">
+                    <label class="form-check-label" for="age1">18-23</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="age" class="form-check-input" value="1.2" id="age2">
+                    <label class="form-check-label" for="age2">24-27</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="age" class="form-check-input" value="0.95" id="age3">
+                    <label class="form-check-label" for="age3">28+</label>
+                </div>
+            </div>
+            <!-- reputation -->
+            <div class="form-group">
+                <label>Reputation</label>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input reputation" value="0.85" id="reputation1">
+                    <label class="form-check-label" for="reputation1">Gossips about parent's attitude</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input reputation" value="0.9" id="reputation2">
+                    <label class="form-check-label" for="reputation2">Gossips about character</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input reputation" value="-20" id="reputation3">
+                    <label class="form-check-label" for="reputation3">General gossip (-20)</label>
+                </div>
+            </div>
+                <!-- love letter -->
+            <div class="form-group">
+                <label for="loveLetter">Love Letter</label>
+                <textarea id="loveLetter" class="form-control" maxlength="500" rows="3" placeholder="Write your love letter"></textarea>
+            </div>
+
+            <button id="calculateBtn" class="btn btn-primary btn-block">Calculate Price</button>
+        </div>
+
+        <!-- Display Result -->
+        <div id="result" class="mt-4 p-4 bg-light rounded shadow-sm"></div>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
